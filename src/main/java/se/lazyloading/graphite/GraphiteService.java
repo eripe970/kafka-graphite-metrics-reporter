@@ -47,10 +47,10 @@ public class GraphiteService {
 
             Histogram histogram;
 
-            if (!metrics.containsKey(metric.getLagKey())) {
-                histogram = metricRegistry.histogram(metric.getLagKey());
-            } else {
+            if (metrics.containsKey(metric.getLagKey())) {
                 histogram = metrics.get(metric.getLagKey());
+            } else {
+                histogram = metricRegistry.histogram(metric.getLagKey());
             }
 
             histogram.update(metric.getLag());

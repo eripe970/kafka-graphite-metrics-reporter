@@ -19,7 +19,7 @@ public class KafkaGraphiteMetricsReporter implements KafkaMetricsReporter {
 
         Configuration configuration = new Configuration(props);
 
-        log.info(String.format("Parsed metric context %s", configuration));
+        log.info(String.format("Parsed configuration %s", configuration));
 
         GraphiteService graphiteService = new GraphiteService(configuration);
 
